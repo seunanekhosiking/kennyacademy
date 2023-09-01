@@ -5,38 +5,41 @@
 </head>
 <body>
     <div class="form-group">
-        <!-- File input for uploading MP3 -->
-        <input type="file" id="file-input" accept=".mp3">
-        <button onclick="uploadMp3()" class="upload-button">
-            Upload MP3
+        <button onclick="playMp3()" class="play-button">
+            Play MP3
         </button>
     </div>
 
     <!-- Audio Player -->
     <div class="form-group">
         <audio id="audio-player" controls>
+            <source src="music1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </div>
 
+    <div class="form-group">
+        <button onclick="downloadMp3()" class="download-button">
+            Download MP3
+        </button>
+        <!-- Hidden link to MP3 file -->
+        <a id="mp3-download-link" href="music1.mp3" download hidden></a>
+    </div>
+
     <script>
-        const fileInput = document.getElementById("file-input");
+        function downloadMp3() {
+            // Trigger the click event on the hidden download link
+            document.getElementById("mp3-download-link").click();
+        }
+
         const audioPlayer = document.getElementById("audio-player");
 
-        fileInput.addEventListener("change", function() {
-            // Get the selected file from the file input
-            const selectedFile = fileInput.files[0];
-
-            // Set the audio source to the selected file
-            if (selectedFile) {
-                const objectURL = URL.createObjectURL(selectedFile);
-                audioPlayer.src = objectURL;
+        function playMp3() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
             }
-        });
-
-        function uploadMp3() {
-            // Trigger the file input to open the file dialog
-            fileInput.click();
         }
     </script>
 </body>
