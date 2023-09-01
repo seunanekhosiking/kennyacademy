@@ -4,75 +4,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<<<<<<< HEAD
-    <div class="form-group">
-        <button onclick="playMp3()" class="play-button">
-            Play MP3
-        </button>
-=======
     <div class="file-list">
-        <!-- JavaScript will generate play buttons here -->
->>>>>>> 44496d40811d2333b33d6ca30fd4573ba51f499f
+        <!-- List of MP3 files with play buttons -->
+        <div class="form-group">
+            <button onclick="playMp3('music1.mp3')" class="play-button">
+                Play MP3 1
+            </button>
+        </div>
+        <div class="form-group">
+            <button onclick="playMp3('music2.mp3')" class="play-button">
+                Play MP3 2
+            </button>
+        </div>
+        <div class="form-group">
+            <button onclick="playMp3('music3.mp3')" class="play-button">
+                Play MP3 3
+            </button>
+        </div>
+        <!-- Add more entries for additional MP3 files as needed -->
     </div>
 
     <!-- Audio Player -->
     <div class="form-group">
         <audio id="audio-player" controls>
-<<<<<<< HEAD
-            <source src="music1.mp3" type="audio/mpeg">
-=======
             <!-- Source will be set dynamically by JavaScript -->
->>>>>>> 44496d40811d2333b33d6ca30fd4573ba51f499f
             Your browser does not support the audio element.
         </audio>
     </div>
 
-<<<<<<< HEAD
-    <div class="form-group">
-        <button onclick="downloadMp3()" class="download-button">
-            Download MP3
-        </button>
-        <!-- Hidden link to MP3 file -->
-        <a id="mp3-download-link" href="music1.mp3" download hidden></a>
-    </div>
-
-    <script>
-        function downloadMp3() {
-            // Trigger the click event on the hidden download link
-            document.getElementById("mp3-download-link").click();
-        }
-
-        const audioPlayer = document.getElementById("audio-player");
-
-        function playMp3() {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-            } else {
-                audioPlayer.pause();
-            }
-        }
-    </script>
-</body>
-</html>
-=======
     <script>
         const audioPlayer = document.getElementById("audio-player");
-        const fileContainer = document.querySelector(".file-list");
-
-        // Fetch the list of MP3 files from the PHP script
-        fetch("list_mp3.php")
-            .then(response => response.json())
-            .then(mp3Files => {
-                // Generate play buttons for each MP3 file
-                mp3Files.forEach((fileName, index) => {
-                    const button = document.createElement("button");
-                    button.textContent = `Play MP3 ${index + 1}`;
-                    button.onclick = () => playMp3(fileName);
-                    button.classList.add("play-button");
-                    fileContainer.appendChild(button);
-                });
-            })
-            .catch(error => console.error(error));
 
         function playMp3(fileName) {
             // Set the source of the audio player to the selected MP3 file
@@ -84,4 +45,3 @@
     </script>
 </body>
 </html>
->>>>>>> 44496d40811d2333b33d6ca30fd4573ba51f499f
