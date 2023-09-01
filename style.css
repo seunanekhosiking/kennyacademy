@@ -179,3 +179,31 @@ form {
   border-radius: 2px;
   cursor: pointer;
 }
+
+/* CSS for album covers */
+.album-covers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.album-cover {
+    text-align: center;
+}
+
+.album-cover img {
+    max-width: 100%;
+    height: auto;
+}
+
+.album-cover button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Additional CSS styles for other elements can be added here */
+
