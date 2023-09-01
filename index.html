@@ -4,20 +4,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
     <div class="form-group">
         <button onclick="playMp3()" class="play-button">
             Play MP3
         </button>
+=======
+    <div class="file-list">
+        <!-- JavaScript will generate play buttons here -->
+>>>>>>> 44496d40811d2333b33d6ca30fd4573ba51f499f
     </div>
 
     <!-- Audio Player -->
     <div class="form-group">
         <audio id="audio-player" controls>
+<<<<<<< HEAD
             <source src="music1.mp3" type="audio/mpeg">
+=======
+            <!-- Source will be set dynamically by JavaScript -->
+>>>>>>> 44496d40811d2333b33d6ca30fd4573ba51f499f
             Your browser does not support the audio element.
         </audio>
     </div>
 
+<<<<<<< HEAD
     <div class="form-group">
         <button onclick="downloadMp3()" class="download-button">
             Download MP3
@@ -44,3 +54,34 @@
     </script>
 </body>
 </html>
+=======
+    <script>
+        const audioPlayer = document.getElementById("audio-player");
+        const fileContainer = document.querySelector(".file-list");
+
+        // Fetch the list of MP3 files from the PHP script
+        fetch("list_mp3.php")
+            .then(response => response.json())
+            .then(mp3Files => {
+                // Generate play buttons for each MP3 file
+                mp3Files.forEach((fileName, index) => {
+                    const button = document.createElement("button");
+                    button.textContent = `Play MP3 ${index + 1}`;
+                    button.onclick = () => playMp3(fileName);
+                    button.classList.add("play-button");
+                    fileContainer.appendChild(button);
+                });
+            })
+            .catch(error => console.error(error));
+
+        function playMp3(fileName) {
+            // Set the source of the audio player to the selected MP3 file
+            audioPlayer.src = fileName;
+
+            // Play the audio
+            audioPlayer.play();
+        }
+    </script>
+</body>
+</html>
+>>>>>>> 44496d40811d2333b33d6ca30fd4573ba51f499f
