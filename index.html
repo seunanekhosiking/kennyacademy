@@ -1,45 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Message Redirect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Album Covers -->
-    <div class="album-covers">
-        <!-- Album 1 -->
-        <div class="album-cover">
-            <img src="album1.jpg" alt="Album 1 Cover">
-            <button onclick="playAudio('music1.mp3')">Play Album 1</button>
-        </div>
-
-        <!-- Album 2 -->
-        <div class="album-cover">
-            <img src="album2.jpg" alt="Album 2 Cover">
-            <button onclick="playAudio('music2.mp3')">Play Album 2</button>
-        </div>
-
-        <!-- Add more album covers and buttons as needed -->
+    <div class="container">
+        <h1>Send a WhatsApp Message</h1>
+        <form id="whatsappForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br>
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" required>
+            <br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required>
+            <br>
+            <button type="submit">Send on WhatsApp</button>
+        </form>
     </div>
-
-    <!-- Audio Player -->
-    <div class="form-group">
-        <audio id="audio-player" controls>
-            <!-- Source will be set dynamically by JavaScript -->
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
-    <script>
-        const audioPlayer = document.getElementById("audio-player");
-
-        function playAudio(fileName) {
-            // Set the source of the audio player to the selected MP3 file
-            audioPlayer.src = fileName;
-
-            // Play the audio
-            audioPlayer.play();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
