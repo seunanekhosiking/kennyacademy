@@ -1,161 +1,141 @@
-/* Reset some default styles for better consistency */
-body, h1, h2, p, form {
-    margin: 0;
-    padding: 0;
-}
 
-/* Set a background color and font styles */
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins','sams-serif';
+  
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+  color: '#ededed';
+  background: linear-gradient(to bottom, #415473,#fff);
+  
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px  10%;
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  z-index: 100;
+    background: #405170;
 }
 
-/* Style the header */
-header {
-    background-color: #007acc;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+.logo {
+  position: relative;
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  flex: 0.7;
+  animation: slideTop 0.5s ease forwards;
+
+}
+.navbar a {
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+}
+.navbar a:hover{
+  color: #000;
+}
+.home {
+  position: relative;
+  width: 100%;
+  justify-self: space-between;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content:right;
+  padding-top:50px;
+
+}
+.home-content {
+  max-width: 80%;
+  width: 70%;
+    padding-right:50px;
 }
 
-/* Style the main sections */
-section {
-    background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideTop 1.5s ease forwards;
 }
-
-/* Style headings and paragraphs */
-h1, h2 {
-    font-weight: bold;
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
 }
-
-/* Style form labels and input fields */
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+.home-content h3 span {
+  color: #fff;
 }
-
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideTop 2s ease forwards;
 }
-
-/* Style the submit button */
-button[type="submit"] {
-    background-color: #007acc;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideTop 2s ease forwards;
 }
-
-button[type="submit"]:hover {
-    background-color: #005b9f;
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #000;
+  font-size: 20px;
+  border-radius: 50%;
+  color: #000;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  opacity: 0;
+  animation: slideTop 2.5s ease forwards;
+  
 }
-#logo {
-    display: block;
-    margin: 0 auto;
-    max-width: 150px;
+.home-sci a:hover {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 0 20px #000;
 }
-
-#classroom-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #fff;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  initial-letter: 1px;
+  text-decoration: none;
+  font-weight: 600;
 }
-
-/* Add animations */
-#logo {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Add a subtle hover effect for buttons */
-button[type="submit"] {
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #005b9f;
+.btn-box:hover {
+  box-shadow: 0 0 5px #000, 0 0 25px #000, 0 0 100px #000;
 }
 
 
-nav {
-    background-color: #007acc;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav li {
-    display: inline;
-    margin: 0 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Style the sections for tabs */
-section {
-    background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: none; /* Hide all sections by default */
-}
-
-#home {
-    display: block; /* Show the Home section by default */
-}
-
-/* Add animations */
-#logo {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Add a subtle hover effect for buttons */
-button[type="submit"] {
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #005b9f;
-}
+@keyframes slideTop {
+  0% {
+   transform: translateY(1000px);
+   opacity: 0;
+   }
+   100% {
+     transform: translateY(0px);
+     opacity: 1;
+     }
+ }
